@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faculty Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure full height of the viewport */
+            background-image: url('https://www.shutterstock.com/shutterstock/photos/758318404/display_1500/stock-vector--d-polygonal-city-future-futuristic-concept-metropolis-for-vr-glasses-virtual-reality-abstract-758318404.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Ensures the background image remains fixed as the user scrolls */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Limit max width of content */
+            margin: auto; /* Center content horizontally */
+            padding: 20px; /* Added padding for better spacing */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        
+
+        .footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px; /* Adjusted padding */
+            margin-top: auto; /* Push footer to the bottom */
+            text-align: center; /* Center align content */
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align items */
+        }
+
+        .footer p, .footer nav {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            margin-right: 10px;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .footer nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px; /* Adjust margin for links */
+        }
+
+        .footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="fachome.html">HOME</a></li>
+                    <!--<li><a href="deletejob.html">JOBS</a></li>-->
+                    
+                    <li><a href="posting.html"> POST JOBS</a></li>
+                    <!-- <li><a href="contact.html">CONTACT</a></li> -->
+                    <li><a href="profile.jsp">PROFILE</a></li> 
+                    <li><a href="com_login.html">LOGIN</a></li>
+                    <!--<li><a href="saved.html">SAVED JOBS</a></li>-->
+                </ul>
+            </nav>
+        </header>
+ 
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Contact Information: +91 40 4241 7773 | info@bvrithyderabad.edu.in </p>
+            <p>Follow us on social media:</p>
+            <nav class="social-links">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                </a>
+                <a href="https://www.google.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google">
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                </a>
+            </nav>
+            <nav>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="aboutus.html">About Us</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

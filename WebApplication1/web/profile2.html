@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Include your existing CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles as needed */
+        .form-container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="active">JobHunt</a>
+        <div>
+            <a href="index.html">HOME</a>
+            <a href="file.html" class="active">JOBS</a>
+            <a href="profile2.html">PROFILE</a>
+            <a href="saved.html">SAVED JOBS</a>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Welcome to Your Profile</h1>
+        <div id="userDetails">
+            <!-- User details will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="job-listings" id="job-listings">
+            <!-- Job listings as per your existing code -->
+            <!-- Each job listing will be displayed here -->
+        </div>
+        <div class="sidebar">
+            <!-- Sidebar filters as per your existing code -->
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve signup details from localStorage if available
+            const signupDetails = JSON.parse(localStorage.getItem('signupDetails')) || {};
+
+            // Update user details in the profile header if available
+            const userDetailsDiv = document.getElementById('userDetails');
+            if (signupDetails.name && signupDetails.email) {
+                userDetailsDiv.innerHTML = `
+                    <p>Name: ${signupDetails.name}</p>
+                    <p>Email: ${signupDetails.email}</p>
+                    <!-- Add more details as needed -->
+                `;
+            }
+        });
+
+        // Handle signup form submission
+        const signupForm = document.getElementById('signupForm');
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get signup form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Store signup details in localStorage
+            const signupDetails = {
+                name: name,
+                email: email
+                // Add more details as needed
+            };
+
+            localStorage.setItem('signupDetails', JSON.stringify(signupDetails));
+
+            // Update user details in the profile header
+            const userDetailsDiv = document.getElementById('userDetails');
+            userDetailsDiv.innerHTML = `
+                <p>Name: ${signupDetails.name}</p>
+                <p>Email: ${signupDetails.email}</p>
+                <!-- Add more details as needed -->
+            `;
+        });
+    </script>
+
+</body>
+</html>
+

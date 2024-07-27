@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posted Jobs</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey; /* Blue background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content container */
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+        }
+
+        /* Job list styles */
+        .job-list {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff; /* White color for heading */
+        }
+
+        #jobList {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .job-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .job-item h3 {
+            margin-top: 0;
+        }
+
+        .job-item p {
+            margin: 5px 0;
+        }
+
+        .apply-link,
+        .save-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .apply-link:hover,
+        .save-link:hover {
+            background-color: #0056b3;
+        }
+
+        /* Side box styles */
+        .side-box {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .side-box h3 {
+            margin-top: 0;
+        }
+
+        .side-box input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .side-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .side-box ul li {
+            margin-bottom: 10px;
+        }
+
+        .side-box ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .side-box ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>CELESTIAL CAREERS</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Jobs</a>
+            <a href="profile.jsp">Profile</a>
+            <a href="saved.html">Saved Jobs</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="job-list">
+            <h2>Our Jobs</h2>
+            <div id="jobList">
+                <!-- Posted jobs will be dynamically displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display posted jobs
+        function displayJobs() {
+            let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+            let jobListDiv = document.getElementById('jobList');
+            jobListDiv.innerHTML = '';
+
+            jobs.forEach(function(job) {
+                let jobItem = document.createElement('div');
+                jobItem.classList.add('job-item');
+                jobItem.innerHTML = `
+                    <h3>${job.companyName}</h3>
+                    <p><strong>Job Title:</strong> ${job.jobTitle}</p>
+                    <p><strong>Location:</strong> ${job.jobLocation}</p>
+                    <p><strong>Eligible Branches:</strong> ${job.EligibleBranches}</p>
+                    <a href="${job.applicationlink}" class="apply-link" target="_blank">Apply Now</a>
+                    <a href="#" class="save-link" onclick="saveJob('${job.companyName}', '${job.jobTitle}', '${job.jobLocation}', '${job.EligibleBranches}', '${job.applicationlink}')">Save Job</a>
+                `;
+                jobListDiv.appendChild(jobItem);
+            });
+        }
+
+        // Save job to localStorage
+        function saveJob(companyName, jobTitle, jobLocation, jobDomain, applicationlink) {
+            let savedJobs = JSON.parse(localStorage.getItem('savedJobs')) || [];
+            savedJobs.push({ companyName, jobTitle, jobLocation, EligibleBranches, applicationlink });
+            localStorage.setItem('savedJobs', JSON.stringify(savedJobs));
+            alert('Job saved!');
+        }
+
+        // Run displayJobs when the page loads
+        document.addEventListener('DOMContentLoaded', displayJobs);
+    </script>
+</body>
+</html>

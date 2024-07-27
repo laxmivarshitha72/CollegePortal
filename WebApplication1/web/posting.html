@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <style>
+        /* Styles for the post job form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="submit"],
+        input[type="link"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensure padding does not affect width */
+        }
+
+        #jobList {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .job-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Post a Job</h2>
+    <form id="jobPostForm">
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" name="companyName" required><br><br>
+
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" id="jobTitle" name="jobTitle" required><br><br>
+
+        <label for="jobLocation">Location:</label>
+        <input type="text" id="jobLocation" name="jobLocation" required><br><br>
+
+        <label for="EligibleBranches">Eligible Branches:</label>
+        <input type="text" id="EligibleBranches" name="EligibleBranches" required><br><br>
+
+<!--        <label for="experience">Experience Required:</label>
+        <input type="text" id="experience" name="experience" required><br><br>-->
+        <label for="applicationlink">Application Link:</label>
+        <input type="link" id="applicationlink" name="applicationlink" required><br><br>
+
+
+
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        // script.js
+document.getElementById('jobPostForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    let companyName = document.getElementById('companyName').value;
+    let jobTitle = document.getElementById('jobTitle').value;
+    let jobLocation = document.getElementById('jobLocation').value;
+    let EligibleBranches = document.getElementById('EligibleBranches').value;
+    let applicationlink = document.getElementById('applicationlink').value;
+
+//    let experience = document.getElementById('experience').value;
+
+    // Create job object
+    let job = {
+        companyName: companyName,
+        jobTitle: jobTitle,
+        jobLocation: jobLocation,
+        EligibleBranches:EligibleBranches,
+//        experience: experience
+  applicationlink: applicationlink
+
+        
+    };
+
+    // Store job locally (for demo, you would typically send this data to a server)
+    let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+    jobs.push(job);
+    localStorage.setItem('jobs', JSON.stringify(jobs));
+
+    // Redirect to postedjob.html after posting
+    window.location.href = 'posted.html';
+});
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

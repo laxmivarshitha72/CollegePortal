@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Placement team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #090572;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .form-section, .contact-details {
+            margin-bottom: 20px;
+        }
+        .form-section h2, .contact-details h2 {
+            color: #090572;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        form div {
+            width: 48%;
+            margin-bottom: 10px;
+        }
+        form div.full-width {
+            width: 100%;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .submit-btn {
+            background-color: #090572;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
+            color: #090572;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Contact Us</h1>
+</div>
+
+<div class="container">
+    <div class="form-section">
+        <h2>Let's Start a Conversation</h2>
+        <form>
+            <div>
+                <input type="text" id="first-name" name="first-name" placeholder="First Name">
+            </div>
+            <div>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+            </div>
+            <div>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </div>
+            <div>
+                <input type="text" id="phone" name="phone" placeholder="Phone">
+            </div>
+            <div>
+                <input type="text" id="company" name="company" placeholder="Company">
+            </div>
+            <div>
+                <input type="text" id="title" name="title" placeholder="Title">
+            </div>
+            <div class="full-width">
+                <textarea id="message" name="message" placeholder="Message"></textarea>
+            </div>
+            <div class="full-width">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="contact-details">
+        <h2>Other Ways to Contact Us</h2>
+        <ul class="contact-info">
+            <li><strong>Email:</strong> <a href="mailto:support@bvrith.com">support@bvrith.com</a></li>
+            <li><strong>Phone:</strong> +91 999 99 999 99</li>
+            <li><strong>Address:</strong> Bachupally, 8-5/4, Nizampet Rd, Opposite Rajiv Gandhi Nagar Colony, Hyderabad, Telangana 500090</li>
+        </ul>
+    </div>
+
+    <div class="contact-details">
+        <h2>Additional Office Locations</h2>
+        <ul class="contact-info">
+            <li><strong>New York Office:</strong> 123 5th Ave, New York, NY 10003, USA</li>
+            <li><strong>London Office:</strong> 456 Oxford St, London, UK</li>
+            <li><strong>Tokyo Office:</strong> 789 Shibuya, Tokyo, Japan</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

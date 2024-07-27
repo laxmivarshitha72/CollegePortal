@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://as1.ftcdn.net/v2/jpg/04/03/14/32/1000_F_403143221_Van99AlZm6sJWIAdiGCk90AonK3jpZ0B.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .forgot-password-form {
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .forgot-password-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .forgot-password-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .forgot-password-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #218838;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .forgot-password-form button:hover {
+            background-color: #2ab300;
+        }
+    </style>
+</head>
+<body>
+    <div class="forgot-password-form">
+        <h2>Forgot Password</h2>
+        <form action="reset1" method="post">
+            <input type="text" name="username" placeholder="Enter your username" required>
+            <input type="password" name="newPassword" placeholder="Enter your new password" required>
+            <button type="submit">Reset Password</button>
+        </form>
+    </div>
+</body>
+</html>
